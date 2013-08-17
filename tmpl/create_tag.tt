@@ -109,14 +109,45 @@
 			</noscript>
 
 			<div id="content" class="span10" style="min-height: 428px;">
-			<!-- start: Content -->
-
 			<div>
-				<hr>
-						<a href="/">tagページ</a> <span class="divider"></span>
-					<li>
 
-	</div><!--/.fluid-container-->
+
+                <div class="box span9">
+          <div class="box-header">
+            <h2><i class="icon-font"></i><span class="break"></span>配信用タグ</h2>
+          </div>
+          <div class="box-content">
+              <div class="row-fluid">
+                <div class="span12">
+                <p>ここのタグを/bodyの前に設置してください</p>
+                                  <pre class="prettyprint">
+var _fout_queue = _fout_queue || {}; if (_fout_queue.segment === void 0) _fout_queue.segment = {};
+var el = document.createElement('script'); el.type = 'text/javascript'; el.async = true;
+var bounds = el.getBoundingClientRect();
+var x = bounds.left;
+var y = bounds.top;
+el.src = (('https:' == document.location.protocol) ? 'https://' : 'http://') + 'js.fout.jp/segmentation.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(el, s);
+
+if (_fout_queue.segment.queue === void 0) _fout_queue.segment.queue = [];
+  _fout_queue.segment.queue.push({
+    'user_id': 3470,
+    'dat':x+","+y,
+    'segment_id': 15835
+  });
+                                  </pre>
+                </div>
+              </div>
+            </div>
+        </div>
+
+      <!--/row-->
+
+          <hr>
+      <!-- end: Content -->
+      </div>
+
+	    </div><!--/.fluid-container-->
 
 	<!-- start: JavaScript-->
 
