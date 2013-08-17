@@ -17,6 +17,49 @@
 	<link id="base-style" href="/static/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="/static/css/style-responsive.css" rel="stylesheet">
 
+	<script src="/static/js/jquery-1.9.1.min.js"></script>
+	<script src="/static/js/jquery-migrate-1.0.0.min.js"></script>
+	<script src="/static/js/jquery-ui-1.10.0.custom.min.js"></script>
+	<script src="/static/js/jquery.ui.touch-punch.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/jquery.cookie.js"></script>
+	<script src="/static/js/fullcalendar.min.js"></script>
+	<script src="/static/js/jquery.dataTables.min.js"></script>
+	<script src="/static/js/excanvas.js"></script>
+	<script src="/static/js/jquery.flot.min.js"></script>
+	<script src="/static/js/jquery.flot.pie.min.js"></script>
+	<script src="/static/js/jquery.flot.stack.js"></script>
+	<script src="/static/js/jquery.flot.resize.min.js"></script>
+	<script src="/static/js/jquery.chosen.min.js"></script>
+	<script src="/static/js/jquery.uniform.min.js"></script>
+	<script src="/static/js/jquery.cleditor.min.js"></script>
+	<script src="/static/js/jquery.noty.js"></script>
+	<script src="/static/js/jquery.elfinder.min.js"></script>
+	<script src="/static/js/jquery.raty.min.js"></script>
+	<script src="/static/js/jquery.iphone.toggle.js"></script>
+	<script src="/static/js/jquery.uploadify-3.1.min.js"></script>
+	<script src="/static/js/jquery.gritter.min.js"></script>
+	<script src="/static/js/jquery.imagesloaded.js"></script>
+	<script src="/static/js/jquery.masonry.min.js"></script>
+	<script src="/static/js/jquery.knob.js"></script>
+	<script src="/static/js/jquery.sparkline.min.js"></script>
+	<script src="/static/js/custom.js"></script>
+	<!-- end: JavaScript-->
+
+    <script>
+        $(function(){
+            $("#slider").slider({
+                value:80,
+                range:"min",
+                min:0,
+                max:100,
+                slide:function(event,ui){
+                    $("#num").val(ui.value);
+                }
+            });
+            $("#num").val($("#slider").slider("value"));
+        });
+    </script>
 	<!--[if lt IE 7 ]>
 	<link id="ie-style" href="css/style-ie.css" rel="stylesheet">
 	<![endif]-->
@@ -137,7 +180,7 @@
 								<label class="control-label" for="prependedInput">キャンペーン名</label>
 								<div class="controls">
 								  <div class="input-prepend">
-									<span class="add-on"></span><input id="prependedInput" size="16" type="text">
+                                      <span class="add-on"></span><input id="prependedInput" size="16" type="text" name="campaign_name">
 								  </div>
 								</div>
 							  </div>
@@ -145,7 +188,7 @@
 								<label class="control-label" for="appendedPrependedInput">月次予算</label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">¥</span><input id="appendedPrependedInput" size="16" type="text">
+									<span class="add-on">¥</span><input id="appendedPrependedInput" size="16" type="text" name="monthly_budget">
 								  </div>
 								  <p class="help-block">最低予算：30,000円</p>
 								</div>
@@ -154,7 +197,7 @@
 								<label class="control-label" for="appendedPrependedInput">日次予算</label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">¥</span><input id="appendedPrependedInput" size="16" type="text">
+									<span class="add-on">¥</span><input id="appendedPrependedInput" size="16" type="text" name="daily_budget">
 								  </div>
 								  <p class="help-block">最低予算：1,000円</p>
 								</div>
@@ -162,9 +205,10 @@
                               <div class="control-group">
 							  <label class="control-label" for="reset">リセット時刻</label>
 							  <div class="controls">
-								<input type="text" class="input-xlarge datepicker hasDatepicker" id="date01" value="11:00">
+								<input type="text" class="input-xlarge datepicker hasDatepicker" id="date01" value="11:00" name="reset_time">
 							  </div>
 							</div>
+                            <!--
                               <div class="control-group">
 							  <label class="control-label" for="date01">スケジュール</label>
 							  <div class="controls">
@@ -173,12 +217,18 @@
                                 <input type="text" class="input-xlarge datepicker hasDatepicker" id="date_end" value="2013/08/30">
 							  </div>
 							</div>
+                            -->
 							  <div class="control-group">
                                 <label class="control-label" for="appendedPrependedInput">Web視聴率設定</label>
 								<div class="controls">
+                                <!--
 <div class="slider sliderMin-8 sliderOrange ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 10%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 57%;"></a></div>
-                              <div class="field_notice">設定値: <span class="must sliderMinLabel">80%</span></div>
-                              </div>
+-->
+                              <!--<div class="field_notice">設定値: <span class="must sliderMinLabel">80%</span></div>-->
+    <input type="text" name="viewership" value="" id="num" />
+    <div id="slider"></div>
+</div>
+
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">更新</button>
 								<button class="btn">トップに戻る</button>
@@ -193,33 +243,5 @@
 					<hr>
 			<!-- end: Content -->
 			</div>
-	<script src="/static/js/jquery-1.9.1.min.js"></script>
-	<script src="/static/js/jquery-migrate-1.0.0.min.js"></script>
-	<script src="/static/js/jquery-ui-1.10.0.custom.min.js"></script>
-	<script src="/static/js/jquery.ui.touch-punch.js"></script>
-	<script src="/static/js/bootstrap.min.js"></script>
-	<script src="/static/js/jquery.cookie.js"></script>
-	<script src="/static/js/fullcalendar.min.js"></script>
-	<script src="/static/js/jquery.dataTables.min.js"></script>
-	<script src="/static/js/excanvas.js"></script>
-	<script src="/static/js/jquery.flot.min.js"></script>
-	<script src="/static/js/jquery.flot.pie.min.js"></script>
-	<script src="/static/js/jquery.flot.stack.js"></script>
-	<script src="/static/js/jquery.flot.resize.min.js"></script>
-	<script src="/static/js/jquery.chosen.min.js"></script>
-	<script src="/static/js/jquery.uniform.min.js"></script>
-	<script src="/static/js/jquery.cleditor.min.js"></script>
-	<script src="/static/js/jquery.noty.js"></script>
-	<script src="/static/js/jquery.elfinder.min.js"></script>
-	<script src="/static/js/jquery.raty.min.js"></script>
-	<script src="/static/js/jquery.iphone.toggle.js"></script>
-	<script src="/static/js/jquery.uploadify-3.1.min.js"></script>
-	<script src="/static/js/jquery.gritter.min.js"></script>
-	<script src="/static/js/jquery.imagesloaded.js"></script>
-	<script src="/static/js/jquery.masonry.min.js"></script>
-	<script src="/static/js/jquery.knob.js"></script>
-	<script src="/static/js/jquery.sparkline.min.js"></script>
-	<script src="/static/js/custom.js"></script>
-	<!-- end: JavaScript-->
 
 </body></html>
