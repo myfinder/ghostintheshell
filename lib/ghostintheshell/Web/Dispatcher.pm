@@ -19,6 +19,45 @@ get '/login' => sub {
     return $c->render('login.tt');
 };
 
+get '/outer_api/spot_viewersip' => sub {
+    my ($c) = @_;
+    my $spot_viewersip = +{
+        'data' => {
+            'url' => 'http://news.example.com',
+            'map' => [
+                {
+                    'x' => 300,
+                    'y' => 100,
+                    'signal' => 30,
+                },
+                {
+                    'x' => 260,
+                    'y' => 100,
+                    'signal' => 70,
+                },
+                {
+                    'x' => 170,
+                    'y' => 100,
+                    'signal' => 90,
+                },
+            ]
+        }
+    };
+    return $c->render_json($spot_viewersip);
+};
+
+get '/batou_api/asorted_spots' => sub {
+    my ($c) = @_;
+    my $asorted_spots = +{
+        'asorted_spots' => [
+            10000,
+            20000,
+            15000
+        ]
+    };
+    return $c->render_json($asorted_spots);
+};
+
 get '/campaign/add' => sub {
     my ($c) = @_;
     return $c->render('create_campaign.tt');

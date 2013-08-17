@@ -17,6 +17,7 @@ __PACKAGE__->load_plugins(
     'Web::CSRFDefender' => {
         post_only => 1,
     },
+    'Web::JSON',
 );
 
 # setup view
