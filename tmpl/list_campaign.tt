@@ -96,6 +96,7 @@
 						<li><a href="/"><i class="icon-home icon-white"></i><span class="hidden-tablet">トップページ</span></a></li>
 						<li><a href="/campaign/add"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet">キャンペーン作成</span></a></li>
 						<li class="active"><a href="/campaign/list"><i class="icon-lock icon-white"></i><span class="hidden-tablet">キャンペーン管理</span></a></li>
+                        <li><a href="/tags/create"><i class="icon-tag icon-white"></i><span class="hidden-tablet">配信用タグ</span></a></li>
 					</ul>
 				</div><!--/.well -->
 			</div><!--/span-->
@@ -133,8 +134,32 @@
                           <thead>
 							  <tr role="row"><th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending" style="width: 330.91666650772095px;">キャンペーン名</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Date registered: activate to sort column ascending" style="width: 242.91666650772095px;">キャンペーン終了日</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending" style="width: 131.91666650772095px;">Web視聴率</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 141.91666650772095px;">状態</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 296.91666650772095px;">アクション</th></tr>
 						  </thead>
-
-					  <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
+                        
+                          <tbody role="alert" aria-live="polite" aria-relevant="all">
+                              
+            [% FOREACH campaign IN result %]
+                               <tr class="odd">
+								<td class=" sorting_1">[% campaign.name %]</td>
+								<td class="center "></td>
+								<td class="center ">80 %</td>
+								<td class="center ">
+									<span class="label label-success">有効</span>
+								</td>
+								<td class="center ">
+									<a class="btn btn-success" href="#">
+										<i class="icon-zoom-in icon-white"></i>
+									</a>
+									<a class="btn btn-info" href="#">
+										<i class="icon-edit icon-white"></i>
+									</a>
+									<a class="btn btn-danger" href="#">
+										<i class="icon-trash icon-white"></i>
+									</a>
+								</td>
+							</tr>
+            [% END %]
+            <!--
+                              <tr class="odd">
 								<td class=" sorting_1">キャンペーン（高校生）</td>
 								<td class="center ">2013/08/21</td>
 								<td class="center ">80 %</td>
@@ -188,6 +213,7 @@
 										<i class="icon-trash icon-white"></i>
 									</a>
 								</td>
+                                -->
 					</div>
 				</div><!--/span-->
 

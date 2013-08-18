@@ -96,6 +96,7 @@
 						<li class="active"><a href="/"><i class="icon-home icon-white"></i><span class="hidden-tablet">トップページ</span></a></li>
 						<li><a href="/campaign/add"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet">キャンペーン作成</span></a></li>
 						<li><a href="/campaign/list"><i class="icon-lock icon-white"></i><span class="hidden-tablet">キャンペーン管理</span></a></li>
+						<li><a href="/tags/create"><i class="icon-tag icon-white"></i><span class="hidden-tablet">配信用タグ</span></a></li>
 					</ul>
 				</div><!--/.well -->
 			</div><!--/span-->

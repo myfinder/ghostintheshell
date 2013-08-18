@@ -11,6 +11,9 @@ requires 'Plack::Middleware::Session'     , '0';
 requires 'Plack::Session'                 , '0.14';
 requires 'Test::WWW::Mechanize::PSGI'     , '0';
 requires 'Time::Piece'                    , '1.20';
+requires 'Net::SSLeay'                    , '1.55';
+requires 'Crypt::SSLeay'                  , '0.64';
+requires 'Furl'                           , '2.18';
 
 on 'configure' => sub {
    requires 'Module::Build', '0.38';
