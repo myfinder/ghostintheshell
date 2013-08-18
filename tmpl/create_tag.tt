@@ -3,7 +3,7 @@
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Stand Alone Complex</title>
+	<title>Batou</title>
 
 	<meta name="description" content="Perfectum Dashboard Bootstrap Admin Template.">
 	<!-- start: Mobile Specific -->
@@ -62,7 +62,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="/"> <img alt="Perfectum Dashboard" src="/static/img/logo20.png"> <span class="hidden-phone">Stand Alone Complex</span></a>
+				<a class="brand" href="/"> <img alt="Perfectum Dashboard" src="/static/img/logo20.png"> <span class="hidden-phone">Batou</span></a>
 
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
