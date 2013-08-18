@@ -93,9 +93,9 @@
 			<div class="span2 main-menu-span">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li class="active"><a href="/"><i class="icon-home icon-white"></i><span class="hidden-tablet">トップページ</span></a></li>
+						<li><a href="/"><i class="icon-home icon-white"></i><span class="hidden-tablet">トップページ</span></a></li>
 						<li><a href="/campaign/add"><i class="icon-eye-open icon-white"></i><span class="hidden-tablet">キャンペーン作成</span></a></li>
-						<li><a href="/campaign/list"><i class="icon-lock icon-white"></i><span class="hidden-tablet">キャンペーン管理</span></a></li>
+						<li class="active"><a href="/campaign/list"><i class="icon-lock icon-white"></i><span class="hidden-tablet">キャンペーン管理</span></a></li>
 					</ul>
 				</div><!--/.well -->
 			</div><!--/span-->
