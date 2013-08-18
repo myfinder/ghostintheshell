@@ -112,6 +112,19 @@
 			<div id="content" class="span10" style="min-height: 428px;">
 			<!-- start: Content -->
 
+			<div>
+				<hr>
+				<ul class="breadcrumb">
+					<li>
+						<a href="top.html">トップページ</a> <span class="divider">/</span>
+					</li>
+					<li>
+						<a href="create_campaign.html">キャンペーン作成</a>
+					</li>
+				</ul>
+				<hr>
+			</div>
+
 			<div class="box span12">
 				<div class="box-header">
 					<h2><i class="icon-list-alt"></i><span class="break"></span>ネット視聴率(impression)</h2>
