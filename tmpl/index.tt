@@ -211,7 +211,57 @@ $(function () {
                     <script src="http://code.highcharts.com/modules/exporting.js"></script>
                     <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 
-
+<div class="row-fluid sortable ui-sortable">	
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="icon-align-justify"></i><span class="break"></span>視聴率ランキング</h2>
+					</div>
+					<div class="box-content">
+						<table class="table table-bordered table-striped table-condensed">
+							  <thead>
+								  <tr>
+									  <th>サイト名</th>
+									  <th>スポットID</th>
+									  <th>インプレッション</th>
+									  <th>視聴率</th>                                          
+								  </tr>
+							  </thead>   
+							  <tbody>
+								<tr>
+									<td>tenki.jp</td>
+									<td class="center">10000</td>
+									<td class="center">6666666</td>
+                                    <td class="center">95%</td>
+                                </tr>
+								<tr>
+									<td>okwave.jp</td>
+									<td class="center">20000</td>
+									<td class="center">6666666</td>
+                                    <td class="center">80%</td>
+                                </tr>
+								<tr>
+									<td>www.nikkansports.com</td>
+									<td class="center">15000</td>
+									<td class="center">6666666</td>
+                                    <td class="center">60%</td>
+                                </tr>
+							  </tbody>
+						 </table>  
+						 <div class="pagination pagination-centered">
+						  <ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active">
+							  <a href="#">1</a>
+							</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">Next</a></li>
+						  </ul>
+						</div>     
+					</div>
+				</div><!--/span-->
+			</div>
 	</div><!--/.fluid-container-->
 
 	<!-- start: JavaScript-->
