@@ -119,7 +119,7 @@
 						<a href="top.html">トップページ</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="create_campaign.html">キャンペーン作成</a>
+						<a href="create_campaign.html">配信タグ作成</a>
 					</li>
 				</ul>
 				<hr>

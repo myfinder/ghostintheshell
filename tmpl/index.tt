@@ -41,7 +41,87 @@
 
 
 <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+<script src="./hackathon/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $(document).ready(function() {
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
 
+        var chart;
+        $('#container').highcharts({
+            chart: {
+                type: 'spline',
+                animation: Highcharts.svg, // don't animate in old IE
+                marginRight: 10,
+                events: {
+                    load: function() {
+
+                        // set up the updating of the chart each second
+                        var series = this.series[0];
+                        setInterval(function() {
+                            var x = (new Date()).getTime(), // current time
+                                y = Math.random();
+                            series.addPoint([x, y], true, true);
+                        }, 1000);
+                    }
+                }
+            },
+            title: {
+                text: 'Live random data'
+            },
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150
+            },
+            yAxis: {
+                title: {
+                    text: 'Value'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                formatter: function() {
+                        return '<b>'+ this.series.name +'</b><br/>'+
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +'<br/>'+
+                        Highcharts.numberFormat(this.y, 2);
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            series: [{
+                name: 'Random data',
+                data: (function() {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i++) {
+                        data.push({
+                            x: time + i * 1000,
+                            y: Math.random()
+                        });
+                    }
+                    return data;
+                })()
+            }]
+        });
+    });
+
+});
+</script>
 <body>
 		<div id="overlay" style="display: none;">
 		<ul>
@@ -118,9 +198,6 @@
 					<li>
 						<a href="top.html">トップページ</a> <span class="divider">/</span>
 					</li>
-					<li>
-						<a href="create_campaign.html">キャンペーン作成</a>
-					</li>
 				</ul>
 				<hr>
 			</div>
@@ -130,15 +207,15 @@
 					<h2><i class="icon-list-alt"></i><span class="break"></span>ネット視聴率(impression)</h2>
 				</div>
 				<div class="box-content">
-					 <div id="realtimechart" style="height: 400px; padding: 0px; position: relative;"><canvas class="base" width="1099" height="400"></canvas><canvas class="overlay" width="1099" height="400" style="position: absolute; left: 0px; top: 0px;"></canvas><div class="tickLabels" style="font-size:smaller"><div class="yAxis y1Axis" style="color:#545454"><div class="tickLabel" style="position:absolute;text-align:right;top:400px;right:1078px;width:21px">0</div><div class="tickLabel" style="position:absolute;text-align:right;top:300px;right:1078px;width:21px">25</div><div class="tickLabel" style="position:absolute;text-align:right;top:200px;right:1078px;width:21px">50</div><div class="tickLabel" style="position:absolute;text-align:right;top:100px;right:1078px;width:21px">75</div><div class="tickLabel" style="position:absolute;text-align:right;top:-6px;right:1078px;width:21px">100</div></div></div></div>
-					 <p></p>
-					 <p><br><input id="updateInterval" type="text" value="" style="text-align: right; width:5em"> ミリ秒ごとに更新</p>
+                    <script src="http://code.highcharts.com/highcharts.js"></script>
+                    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+                    <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
 
 	</div><!--/.fluid-container-->
 
 	<!-- start: JavaScript-->
 
-		<script src="/static/js/jquery-1.9.1.min.js"></script>
 		<script src="/static/js/jquery-migrate-1.0.0.min.js"></script>
 		<script src="/static/js/jquery-ui-1.10.0.custom.min.js"></script>
 		<script src="/static/js/jquery.ui.touch-punch.js"></script>

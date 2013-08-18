@@ -161,7 +161,7 @@
 						<a href="/">トップページ</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="/campaign/add">キャンペーン作成</a>
+						<a href="/campaign/add">キャンペーン管理</a>
 					</li>
 				</ul>
 				<hr>
